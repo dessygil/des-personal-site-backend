@@ -18,6 +18,18 @@ mongoose.connect(process.env.MONGO_URL, {
 
 app.use("/api/jobs", jobsRoute);
 
+app.get('/', (req, res, next) => {
+
+    res.status(200).json({
+        status: 'success',
+        data: {
+            name: 'name of your app',
+            version: '0.1.0'
+        }
+    });
+
+});
+
 
 app.listen(process.env.PORT || 5000, () => {
     console.log("Connected to port 5000");
