@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URL, {
     console.log(err)
 });
 
-app.use("/api/jobs", jobsRoute);
+app.use("/", jobsRoute);
 
 
 app.listen(process.env.PORT || 5000, () => {
