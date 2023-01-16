@@ -3,6 +3,13 @@ const app = express();
 const dotenv = require('dotenv').config();
 const mongoose = require("mongoose")
 const jobsRoute = require("./routes/jobs");
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
+ 
+ app.use(cors(corsOptions))
 
 
 mongoose.set('strictQuery', false);
