@@ -55,6 +55,7 @@ router.get("/:id", async (req, res) => {
 
 //Get all posts
 router.get("/", async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         allJobs = await Job.find();
         res.status(200).json(allJobs);
