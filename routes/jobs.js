@@ -57,7 +57,6 @@ router.get("/:id", async (req, res) => {
 router.get("/", async (req, res) => {
     try {
         allJobs = await Job.find();
-        console.log(allJobs,"you are here");
         res.status(200).json(allJobs);
     } catch (err) {
         res.status(500).json(err);
